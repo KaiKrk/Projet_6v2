@@ -1,4 +1,4 @@
-package com.projet6;
+package com.projet6.projet6;
 
 
 

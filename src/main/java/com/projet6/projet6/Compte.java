@@ -1,4 +1,4 @@
-package com.projet6;
+package com.projet6.projet6;
 
 import com.projet6.contrat.CompteDao;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class Compte  {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "idCompte")
+    @Column(name = "idcompte")
     private Long id;
 
     @Column(name = "identifiant")
