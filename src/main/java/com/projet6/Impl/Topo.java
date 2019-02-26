@@ -1,11 +1,11 @@
 package com.projet6.Impl;
 
+import com.projet6.Compte;
 import com.projet6.contrat.TopoDao;
 
 import javax.persistence.*;
 import java.sql.Blob;
 import java.util.List;
-import java.util.concurrent.BlockingDeque;
 
 @Table (name = "topo")
 public class Topo implements TopoDao {
