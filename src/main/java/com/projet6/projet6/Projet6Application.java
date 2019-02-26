@@ -24,22 +24,6 @@ public class Projet6Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Projet6Application.class, args);
-		System.out.println("dadadadada");
-
-
-		try{
-			Class.forName("org.postgresql.Driver");
-			Connection connection = null;
-			connection = DriverManager.getConnection(
-					"jdbc:postgresql://127.0.0.1:5432/p6_database","postgres", "94181500kaifu");
-			PreparedStatement stm = connection.prepareStatement("SELECT * From compte");
-
-			ResultSet Rs = stm.executeQuery();
-			while (Rs.next()){
-				System.out.println(Rs.getString(7));
-			}
-			connection.close();
-		}catch (Exception e){
 
 		}
 
@@ -50,4 +34,4 @@ public class Projet6Application {
 
 
 
-}
+
