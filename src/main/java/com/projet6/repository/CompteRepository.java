@@ -1,6 +1,7 @@
-package com.projet6.projet6;
+package com.projet6.repository;
 
 
+import com.projet6.Impl.Compte;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
