@@ -13,11 +13,12 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
-@Entity
+
 @Table (name = "compte")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class Compte  {
 
     @Id

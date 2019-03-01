@@ -2,24 +2,33 @@ package com.projet6.Impl;
 
 import com.projet6.contrat.SecteurDao;
 import com.sun.javafx.beans.IDProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 import java.sql.Blob;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
 @Table (name = "secteur")
 public class Secteur implements SecteurDao {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "idSecteur")
+    @Column(name = "idsecteur")
     private Long id;
     private String nom;
-    private Blob secteurImage;
+
+    @Column(name = "secteurimage")
+    private byte[] secteurImage;
 
     @ManyToOne
-    @JoinColumn(name = "idTopo")
+    @JoinColumn(name = "idtopo")
     private Topo topo;
 
     @Override

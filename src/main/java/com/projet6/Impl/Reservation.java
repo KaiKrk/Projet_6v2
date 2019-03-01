@@ -1,29 +1,42 @@
 package com.projet6.Impl;
 
 import com.projet6.contrat.ReservationDao;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
 @Table (name = "reservation")
 public class Reservation implements ReservationDao {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "idReservation")
+    @Column(name = "idreservation")
     private Long id;
+
+    @Column(name = "debutreservation")
     private Time debutReservation;
+
+    @Column(name = "finreservation")
     private Time finReservation;
-    private enum statutReservation{}
+
+    @Column(name = "statutreservation")
+    private String statutReservation;
 
     @ManyToOne
-    @JoinColumn(name = "idTopo")
+    @JoinColumn(name = "idtopo")
     private Topo topo;
 
     @ManyToOne
-    @JoinColumn(name = "idCompte")
+    @JoinColumn(name = "idcompte")
     private Compte compte;
 
 

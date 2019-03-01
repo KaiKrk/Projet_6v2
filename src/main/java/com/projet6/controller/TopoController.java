@@ -38,18 +38,19 @@ public class TopoController {
 
 
     }
-/*    @PutMapping(value="/{id}")
+   @PutMapping(value="/{id}")
     public ResponseEntity<Topo> update(@PathVariable("id") long id,
                                           @RequestBody Topo topo){
         return repository.findById(id)
                 .map(record -> {
-                    record.setName(contact.getName());
-                    record.setEmail(contact.getEmail());
-                    record.setPhone(contact.getPhone());
+                    record.setRegion(topo.getRegion());
+                    record.setPays(topo.getPays());
+                    record.setStatutTopo(topo.getStatutTopo());
+                    record.setTopoFile(topo.getTopoFile());
                     Topo updated = repository.save(record);
                     return ResponseEntity.ok().body(updated);
                 }).orElse(ResponseEntity.notFound().build());
-    }*/
+    }
 
     @DeleteMapping(path ={"/{id}"})
     public ResponseEntity<?> delete(@PathVariable("id") long id) {

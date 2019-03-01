@@ -1,27 +1,36 @@
 package com.projet6.Impl;
 
 import com.projet6.contrat.CommentaireDao;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
 @Table(name = "commentaire")
 public class Commentaire implements CommentaireDao{
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "idCommentaire")
+    @Column(name = "idcommentaire")
     private Long id;
     private String commentaire;
-    private enum statutCommentaire{valid,deleted,modified}
+
+    @Column(name = "statutcommentaire")
+    private String statutCommentaire;
 
     @ManyToOne
-    @JoinColumn(name = "idTopo")
+    @JoinColumn(name = "idtopo")
     private Topo topo;
 
     @ManyToOne
-    @JoinColumn(name = "idCompte")
+    @JoinColumn(name = "idcompte")
     private Compte compte;
 
 
